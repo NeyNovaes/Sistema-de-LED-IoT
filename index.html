@@ -18,6 +18,37 @@
             <button id="btn_ligar">Ligar</button>
             <button id="btn_desligar">Desligar</button>
         </div>
+         <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+            import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+
+            const firebaseConfig = {
+            apiKey: "AIzaSyBOyZv0ND_rianGdSY1yuaMXKhY_h8bHCk",
+            authDomain: "projeto1-iot.firebaseapp.com",
+            databaseURL: "https://projeto1-iot-default-rtdb.firebaseio.com",
+            projectId: "projeto1-iot",
+            storageBucket: "projeto1-iot.firebasestorage.app",
+            messagingSenderId: "239974097769",
+            appId: "1:239974097769:web:6e3289f79198c0856293f8",
+            measurementId: "G-V6KQQYMBQZ"
+        };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase(app);
+
+            const caminhoLed = ref(db, 'iot/dispositivo01/led/status');
+
+            onValue(caminhoLed, (snapshot) => {
+                const estado = snapshot.val();
+                document.getElementById('status-display').innerText = estado ? "ACESO" : "APAGADO";
+            });
+
+            window.mudarStatus = (valor) => {
+                set(caminhoLed, valor);
+            };
+        </script>
     </section>
 </body>
 </html>
+
