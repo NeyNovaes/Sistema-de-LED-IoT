@@ -11,12 +11,11 @@
         <h1>Sistema de controle de LED online</h1>
         <div class="container">    
             <h2>Status do LED:</h2>
-            <p class="status-ligado">LIGADO</p> 
-            <p class="status-desligado">DESLIGADO</p>
+            <p>O LED está: <span id="status-display" class="status"></span></p>
         </div>
         <div class="controles">            
-            <button id="btn_ligar">Ligar</button>
-            <button id="btn_desligar">Desligar</button>
+            <button onclick="mudarStatus(true)">Ligar</button>
+            <button onclick="mudarStatus(false)">Desligar</button>
         </div>
          <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -51,4 +50,3 @@
     </section>
 </body>
 </html>
-
