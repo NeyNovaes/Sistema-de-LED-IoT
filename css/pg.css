@@ -29,6 +29,16 @@ h1{
 
 .status{
     margin: 20px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#status-display:contains("ACESO") {
+    color: green;
+}
+
+#status-display:contains("APAGADO") {
+    color: red;
 }
 
 .status-led {
