@@ -28,7 +28,27 @@ h1{
 }
 
 .status{
-    margin: 20px o;
+    margin: 20px 0;
+}
+
+.indicador {
+    display: flex;
+    flex-direction: column; /* deixa em coluna */
+    align-items: center;
+    gap: 10px;
+}
+
+.bolinha {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+#estado {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
 }
 
 .status p {
