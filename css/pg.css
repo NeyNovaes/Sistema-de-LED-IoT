@@ -6,7 +6,7 @@
 
 body{
     font-family: arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #fff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,4 +76,5 @@ button {
 .btn-desligar:hover {
     background-color: darkred;
 }
+
 
