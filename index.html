@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/pg.css" rel="stylesheet">
     <title>Controle de LED IoT</title>
 </head>
+
 <body>
     <section class="tela-principal" id="tela_principal">
         <h1>Sistema de controle de LED online</h1>
-        <div class="container">    
+        <div class="container">
             <h2>Status do LED:</h2>
             <p>O LED está: <span id="status-display" class="status"></span></p>
         </div>
-        <div class="controles">            
-            <button onclick="mudarStatus(true)">Ligar</button>
-            <button onclick="mudarStatus(false)">Desligar</button>
+        <div class="controles">
+            <div class="controles">
+                <button onclick="mudarStatus(true)"
+                    style="background-color: #28a745; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 120px; margin: 5px;">
+                    Ligar
+                </button>
+
+                <button onclick="mudarStatus(false)"
+                    style="background-color: #dc3545; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 120px; margin: 5px;">
+                    Desligar
+                </button>
+            </div>
         </div>
-         <script type="module">
+        <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
             import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 
             const firebaseConfig = {
-            apiKey: "AIzaSyBOyZv0ND_rianGdSY1yuaMXKhY_h8bHCk",
-            authDomain: "projeto1-iot.firebaseapp.com",
-            databaseURL: "https://projeto1-iot-default-rtdb.firebaseio.com",
-            projectId: "projeto1-iot",
-            storageBucket: "projeto1-iot.firebasestorage.app",
-            messagingSenderId: "239974097769",
-            appId: "1:239974097769:web:6e3289f79198c0856293f8",
-            measurementId: "G-V6KQQYMBQZ"
-        };
+                apiKey: "AIzaSyBOyZv0ND_rianGdSY1yuaMXKhY_h8bHCk",
+                authDomain: "projeto1-iot.firebaseapp.com",
+                databaseURL: "https://projeto1-iot-default-rtdb.firebaseio.com",
+                projectId: "projeto1-iot",
+                storageBucket: "projeto1-iot.firebasestorage.app",
+                messagingSenderId: "239974097769",
+                appId: "1:239974097769:web:6e3289f79198c0856293f8",
+                measurementId: "G-V6KQQYMBQZ"
+            };
 
             const app = initializeApp(firebaseConfig);
             const db = getDatabase(app);
@@ -49,4 +60,5 @@
         </script>
     </section>
 </body>
+
 </html>
